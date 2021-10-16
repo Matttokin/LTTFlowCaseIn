@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  lttflow.web.mvc:
+    image: ${DOCKER_REGISTRY-}lttflowwebmvc
+    build:
+      context: .
+      dockerfile: src/LttFlow.Web.Mvc/Dockerfile
+
+  lttflow.pgsql:
+        image: postgres:12.4-alpine
+        container_name: lttflow.pgsql
+        restart: always
