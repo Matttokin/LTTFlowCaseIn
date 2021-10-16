@@ -2,6 +2,10 @@
 
     'use strict';
 
+    var _meterReadingService = abp.services.app.meterReading;
+
+    // _meterReadingService.getChartData();
+
     /* ChartJS
      * -------
      * Here we will create a few charts using ChartJS
