@@ -7,5 +7,6 @@ namespace LttFlow.SeedTimer
 {
     public interface ISeedTimerAppService : IApplicationService
     {
+        public void GenerateData();
     }
 }
