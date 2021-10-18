@@ -14,7 +14,7 @@ using System.Text;
 
 namespace LttFlow.Test
 {
-    public class Test : LttFlowAppServiceBase,IApplicationService
+    public class Test : LttFlowAppServiceBase, ITelegramAppService
     {
         static string token = "2023066077:AAGeCA8YcQPDeZgdaFVmrbWPw5U3faG7HrQ";
         string urlDomain = "https://api.telegram.org/";
@@ -88,7 +88,7 @@ namespace LttFlow.Test
         }
 
 
-        string getNewUser()
+        public string GetNewUser()
         {
             sURL = urlDomain + getUpdates + "?offset=" + updateId;
             WebRequest wrGETURL;
@@ -150,7 +150,7 @@ namespace LttFlow.Test
         public string Get()
         {
             
-            getNewUser();
+            GetNewUser();
             sendUser("hell");
             return null;
         }
