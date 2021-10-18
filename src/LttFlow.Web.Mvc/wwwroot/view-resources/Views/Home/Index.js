@@ -2,58 +2,52 @@
     return Math.floor(Math.random() * max);
 }
 
+function removeDuplicates(arr) {
+
+    const result = [];
+    const duplicatesIndices = [];
+
+    arr.forEach((current, index) => {
+
+        if (duplicatesIndices.includes(index)) return;
+
+        result.push(current);
+
+        for (let comparisonIndex = index + 1; comparisonIndex < arr.length; comparisonIndex++) {
+
+            const comparison = arr[comparisonIndex];
+            const currentKeys = Object.keys(current);
+            const comparisonKeys = Object.keys(comparison);
+
+            if (currentKeys.length !== comparisonKeys.length) continue;
+
+            const currentKeysString = currentKeys.sort().join("").toLowerCase();
+            const comparisonKeysString = comparisonKeys.sort().join("").toLowerCase();
+            if (currentKeysString !== comparisonKeysString) continue;
+
+            let valuesEqual = true;
+            for (let i = 0; i < currentKeys.length; i++) {
+                const key = currentKeys[i];
+                if (current[key] !== comparison[key]) {
+                    valuesEqual = false;
+                    break;
+                }
+            }
+            if (valuesEqual) duplicatesIndices.push(comparisonIndex);
+
+        }
+    });
+    return result;
+}
+
 $(function () {
 
     'use strict';
 
     var _meterReadingService = abp.services.app.meterReading;
 
-    var arrayfil = [];
-
-    for (var i = 0; i < 10; i++) {
-        var fiel = {
-            groupName: 'Регион №' + getRandomInt(100),
-            value: i + getRandomInt(700),
-            date: i + ' октября',
-        };
-        arrayfil.push(fiel);
-    }
-
-    // 
-
-    /* ChartJS
-     * -------
-     * Here we will create a few charts using ChartJS
-     */
-
-    //-----------------------
-    //- MONTHLY SALES CHART -
-    //-----------------------
-
-    // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
-    // This will get the first returned node in the jQuery collection.
-
-    var salesChartData = {
-        labels: [],
-        datasets: []
-    };
-
-    var dataset = {
-        label: 'Приборы учета',
-        backgroundColor: [],
-        borderColor: [],
-        spanGaps: true,
-        data: []
-    };
-
-    //arrayfil.forEach(datas => {
-    //    var color = 'rgba(' + getRandomInt(255) + ', ' + getRandomInt(255) + ', ' + getRandomInt(255) + ', 1)';
-    //    dataset.backgroundColor.push(color);
-    //    dataset.borderColor.push(color);
-    //    dataset.data.push(datas.value);
-    //    salesChartData.labels.push(datas.groupName);
-    //});
+    var salesChartCanvas1 = $('#salesChart').get(0).getContext('2d');
 
     _meterReadingService.getChartData().done(function (result) {
         var salesChartData = {
@@ -73,6 +67,8 @@ $(function () {
             salesChartData.labels.push(das.date);
             salesChartData.datasets.push(dataset);
         });
+
+        salesChartData.labels = removeDuplicates(salesChartData.labels);
 
         var salesChartOptions = {
             //Boolean - If we should show the scale at all
@@ -110,7 +106,19 @@ $(function () {
             //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
             maintainAspectRatio: false,
             //Boolean - whether to make the chart responsive to window resizing
-            responsive: true
+            responsive: true,
+
+            scales: {
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        suggestedMin: 11,    // minimum will be 0, unless there is a lower value.
+                        // OR //
+                        suggestedMax: 17,
+                        beginAtZero: true   // minimum value will be 0.
+                    }
+                }]
+            }
         };
 
         var salesChart = new Chart(salesChartCanvas, {
@@ -120,10 +128,42 @@ $(function () {
         });
     });;
 
+    var arrayfil = [];
 
-    //Create the line chart
-    
-    //---------------------------
-    //- END MONTHLY SALES CHART -
-    //---------------------------
+    for (var i = 0; i < 10; i++) {
+        var fiel = {
+            groupName: 'Регион №' + getRandomInt(100),
+            value: i + getRandomInt(700),
+            date: i + ' октября',
+        };
+        arrayfil.push(fiel);
+    }
+
+    var salesChartData = {
+        labels: [],
+        datasets: []
+    };
+
+    var dataset = {
+        label: 'Приборы учета',
+        backgroundColor: [],
+        borderColor: [],
+        spanGaps: true,
+        data: []
+    };
+
+    arrayfil.forEach(datas => {
+        var color = 'rgba(' + getRandomInt(255) + ', ' + getRandomInt(255) + ', ' + getRandomInt(255) + ', 1)';
+        dataset.backgroundColor.push(color);
+        dataset.borderColor.push(color);
+        dataset.data.push(datas.value);
+        salesChartData.labels.push(datas.groupName);
+    });
+
+    var salesChart = new Chart(salesChartCanvas1, {
+        type: 'line',
+        data: salesChartData,
+        options: salesChartOptions
+    });
+
 });
