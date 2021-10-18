@@ -8,5 +8,6 @@ namespace LttFlow.Test
     public interface ITelegramAppService : IApplicationService
     {
         public void GetNewUserCycle();
+        public void httpSend(string text);
     }
 }

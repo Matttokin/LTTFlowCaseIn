@@ -63,33 +63,33 @@ namespace LttFlow.Test
                     }
                 }
             }
-            
+
         }
-        void sendUserById(string id,string text)
+        void sendUserById(string id, string text)
         {
-            
-                sURL = urlDomain + sendMessage + "?chat_id=" + id + "&text=" + text;
-                Console.WriteLine(sURL);
-                WebRequest wrGETURL;
-                wrGETURL = WebRequest.Create(sURL);
-                Stream objStream;
-                objStream = wrGETURL.GetResponse().GetResponseStream();
 
-                StreamReader objReader = new StreamReader(objStream);
+            sURL = urlDomain + sendMessage + "?chat_id=" + id + "&text=" + text;
+            Console.WriteLine(sURL);
+            WebRequest wrGETURL;
+            wrGETURL = WebRequest.Create(sURL);
+            Stream objStream;
+            objStream = wrGETURL.GetResponse().GetResponseStream();
 
-                string outLine = "";
-                string sLine = "";
-                int i = 0;
-                List<string> ls = new List<string>();
-                while (sLine != null)
+            StreamReader objReader = new StreamReader(objStream);
+
+            string outLine = "";
+            string sLine = "";
+            int i = 0;
+            List<string> ls = new List<string>();
+            while (sLine != null)
+            {
+                i++;
+                sLine = objReader.ReadLine();
+                if (sLine != null)
                 {
-                    i++;
-                    sLine = objReader.ReadLine();
-                    if (sLine != null)
-                    {
-                        outLine += sLine;
-                    }
+                    outLine += sLine;
                 }
+            }
 
 
         }
@@ -97,7 +97,7 @@ namespace LttFlow.Test
         [UnitOfWork]
         public virtual string GetNewUser()
         {
-            sURL = urlDomain + getUpdates + "?offset=" + updateId;
+            sURL = urlDomain + getUpdates + "?offset=" + (String.IsNullOrEmpty(updateId) ? "" : (Int32.Parse(updateId) + 1).ToString());
             WebRequest wrGETURL;
             wrGETURL = WebRequest.Create(sURL);
             Stream objStream;
@@ -138,26 +138,31 @@ namespace LttFlow.Test
 
                     if (user == null)
                     {
-                            repositoryTgUser.Insert(new TelegramUserList()
-                            {
-                                TelegramId = Int32.Parse(chat_id),
-                                Name = first_name + " " + last_name,
-                                IsUsed = true
-                            });
+                        repositoryTgUser.Insert(new TelegramUserList()
+                        {
+                            TelegramId = Int32.Parse(chat_id),
+                            Name = first_name + " " + last_name,
+                            IsUsed = true
+                        });
                         sendUserById(chat_id, "Здравствуйте. Вы используете LTTFlowBot");
                         CurrentUnitOfWork.SaveChanges();
                     }
-                        
+
                 }
 
             }
             return outLine;
-        }  
+        }
 
         [UnitOfWork]
         public virtual void GetNewUserCycle()
         {
             _timer = new Timer((obj) => GetNewUser(), null, 0, 60 * 1000);
+        }
+        [HttpGet]
+        public void httpSend(string text)
+        {
+            sendUser(text);
         }
     }
 }
