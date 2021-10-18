@@ -1,120 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
   <texts>
-    <text name="HomePage" value="Home page" />
-    <text name="About" value="About" />
-    <text name="WelcomeMessage" value="Welcome to LttFlow!" />
-    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
-    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
-    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
-    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
-    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
-    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
-    <text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
-    <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
-    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
-    <text name="TenancyName" value="Tenancy name" />
-    <text name="UserNameOrEmail" value="User name or email" />
-    <text name="Password" value="Password" />
-    <text name="ResetPassword" value="Reset Password" />
-    <text name="UpdatePassword" value="Update Password" />
-    <text name="RememberMe" value="Remember me" />
-    <text name="LogIn" value="Log in" />
-    <text name="LoginFailed" value="Login failed!" />
-    <text name="NameSurname" value="Name surname" />
-    <text name="UserName" value="User name" />
-    <text name="Name" value="Name" />
-    <text name="Surname" value="Surname" />
-    <text name="EmailAddress" value="Email address" />
-    <text name="Tenants" value="Tenants" />
-    <text name="SavedSuccessfully" value="Saved successfully" />
-    <text name="CreateNewTenant" value="Create new tenant" />
-    <text name="AdminEmailAddress" value="Admin email address" />
-    <text name="AdminPassword" value="Admin password" />
-    <text name="Save" value="Save" />
-    <text name="Cancel" value="Cancel" />
-    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
-    <text name="DefaultPasswordIs" value="Default password is {0}" />
-    <text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
-    <text name="Register" value="Register" />
-    <text name="OrLoginWith" value="Or login with" />
-    <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
-    <text name="TenantSelection" value="Tenant Selection" />
-    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
-    <text name="Logout" value="Logout" />
-    <text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
-    <text name="DatabaseConnectionString" value="Database connection string" />
-    <text name="Users" value="Users" />
-    <text name="IsActive" value="Is active" />
-    <text name="FullName" value="Full name" />
-    <text name="CreateNewUser" value="Create new user" />
-    <text name="Yes" value="Yes" />
-    <text name="No" value="No" />
-    <text name="Optional" value="Optional" />
-    <text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
-    <text name="CurrentTenant">Current tenant</text>
-    <text name="NotSelected">Not selected</text>
-    <text name="Change">Change</text>
-    <text name="ChangeTenant">Change tenant</text>
-    <text name="MultiLevelMenu">Multi Level Menu</text>
-    <text name="Back">Back</text>
-    <text name="SuccessfullyRegistered">Successfully registered</text>
-    <text name="WaitingForEmailActivation">Your email address should be activated</text>
-    <text name="Roles">Roles</text>
-    <text name="DisplayName">Display Name</text>
-    <text name="Edit">Edit</text>
-    <text name="Delete">Delete</text>
-    <text name="CreateNewRole">Create new role</text>
-    <text name="RoleName">Role Name</text>
-    <text name="Actions">Actions</text>
-    <text name="CouldNotCompleteLoginOperation">Could not complete login operation. Please try again later.</text>
-    <text name="CouldNotValidateExternalUser">Could not validate external user</text>
-    <text name="EditRole">Edit role</text>
-    <text name="EditTenant">Edit tenant</text>
-    <text name="EditUser">Edit user</text>
-    <text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
-    <text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
-    <text name="ThisFieldIsRequired">This field is required</text>
-    <text name="PleaseWait">Please wait...</text>
-    <text name="Administration">Administration</text>
-    <text name="ClearAll">Clear all</text>
-    <text name="ClearOthers">Clear others</text>
-    <text name="LabelOptions">Label options</text>
-    <text name="Permissions">Permissions</text>
-    <text name="RoleDescription">Role description</text>
-    <text name="Refresh">Refresh</text>
-    <text name="Create">Create</text>
-    <text name="UserDetails">User details</text>
-    <text name="UserRoles">User roles</text>
-    <text name="ConfirmPassword">Confirm password</text>
-    <text name="Version">Version</text>
-    <text name="On">On</text>
-    <text name="Off">Off</text>
-    <text name="AreYouSureWantToDelete">Are you sure want to delete {0}?</text>
-    <text name="SuccessfullyDeleted">Successfully deleted</text>
-    <text name="StartTyping">Start Typing</text>
-    <text name="Skins">Skins</text>
-    <text name="Settings">Settings</text>
-    <text name="Filter">Filter</text>
-    <text name="CurrentPassword">Current Password</text>
-    <text name="NewPassword">New Password</text>
-    <text name="ConfirmNewPassword">Confirm New Password</text>
-    <text name="PasswordsDoNotMatch">Passwords do not match</text>
-    <text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Passwords must be at least 8 characters, contain a lowercase, uppercase, and number</text>
-    <text name="UserDeleteWarningMessage">User {0} will be deleted.</text>
-    <text name="RoleDeleteWarningMessage">Role {0} will be deleted and unassigned from all assigned users.</text>
-    <text name="TenantDeleteWarningMessage">Tenant {0} will be deleted.</text>
+   <text name="HomePage" value="Домашняя страница" />
+    <text name="About" value="О нас" />
+    <text name="WelcomeMessage" value="Добро пожаловать на LttFlow!" />
+    <text name="FormIsNotValidMessage" value="Форма недействительна. Пожалуйста, проверьте и исправьте ошибки" />
+    <text name="TenantNameCanNotBeEmpty" value="Имя арендатора не может быть пустым" />
+    <text name="InvalidUserNameOrPassword" value="Неверное имя пользователя или пароль" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="Нет арендатора, определенного с именем {0}" />
+    <text name="TenantIsNotActive" value="Арендатор {0} не активен." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="Пользователь {0} не активен и не может войти в систему." />
+    <text name="UserEmailIsNotConfirmedAndCanNotLogin">Ваш адрес электронной почты не подтвержден. Вы не можете войти в систему.</text>
+    <text name="UserLockedOutMessage">Учетная запись пользователя была заблокирована. Пожалуйста, повторите попытку позже.</text>
+    <text name="PleaseEnterLoginInformation" value="Пожалуйста, введите регистрационную информацию" />
+    <text name="TenancyName" value="Название арендатора" />
+    <text name="UserNameOrEmail" value="Имя пользователя или адрес электронной почты" />
+    <text name="Password" value="Пароль" />
+    <text name="ResetPassword" value="Сброс пароля" />
+    <text name="UpdatePassword" value="Обновить пароль" />
+    <text name="RememberMe" value="Помни меня" />
+    <text name="LogIn" value="Логин" />
+    <text name="LoginFailed" value="Ошибка логина!" />
+    <text name="NameSurname" value="Имя фамилия" />
+    <text name="UserName" value="Имя пользователя" />
+    <text name="Name" value="Имя" />
+    <text name="Surname" value="Фамилия" />
+    <text name="EmailAddress" value="Адрес электронной почты" />
+    <text name="Tenants" value="Арендаторы" />
+    <text name="SavedSuccessfully" value="Успешно сохранено" />
+    <text name="CreateNewTenant" value="Создать нового арендатора" />
+    <text name="AdminEmailAddress" value="Адрес электронной почты администратора" />
+    <text name="AdminPassword" value="Пароль администратора" />
+    <text name="Save" value="Сохранить" />
+    <text name="Cancel" value="Отменить" />
+    <text name="TenantName_Regex_Description" value="Имя арендатора должно состоять не менее чем из 2 символов, начинаться с буквы и заканчиваться буквой, цифрой, тире или подчеркиванием." />
+    <text name="DefaultPasswordIs" value="Пароль по умолчанию - {0}" />
+    <text name="CanBeEmptyToLoginAsHost" value="Может быть пустым для входа в систему в качестве хоста." />
+    <text name="Register" value="Зарегистрировать" />
+    <text name="OrLoginWith" value="Или войдите в систему с помощью" />
+    <text name="WaitingForActivationMessage" value="Ваша учетная запись ожидает активации системным администратором." />
+    <text name="TenantSelection" value="Выбор арендатора" />
+    <text name="TenantSelection_Detail" value="Пожалуйста, выберите одного из следующих арендаторов." />
+    <text name="Logout" value="Выход из системы" />
+    <text name="RegisterFormUserNameInvalidMessage">Пожалуйста, не вводите адрес электронной почты для имени пользователя.</text>
+    <text name="DatabaseConnectionString" value="Строка подключения к базе данных" />
+    <text name="Users" value="Пользователи" />
+    <text name="IsActive" value="Активен" />
+    <text name="FullName" value="Полное имя" />
+    <text name="CreateNewUser" value="Создать нового пользователя" />
+    <text name="Yes" value="Да" />
+    <text name="No" value="Нет" />
+    <text name="Optional" value="Необязательно" />
+    <text name="LeaveEmptyToSwitchToHost">Оставьте пустым, чтобы переключиться на хост</text>
+    <text name="CurrentTenant">Текущий арендатор</text>
+    <text name="NotSelected">Не выбрано</text>
+    <text name="Change">Изменить </text>
+    <text name="ChangeTenant">Сменить арендатора</text>
+    <text name="MultiLevelMenu">Многоуровневое меню</text>
+    <text name="Back">Назад</text>
+    <text name="SuccessfullyRegistered">Успешно зарегистрирован</text>
+    <text name="WaitingForEmailActivation">Ваша почта была активирована</text>
+    <text name="Roles">Роли</text>
+    <text name="DisplayName">Отображаемое имя</text>
+    <text name="Edit">Редактировать</text>
+    <text name="Delete">Удалить</text>
+    <text name="CreateNewRole">Создать новую роль</text>
+    <text name="RoleName">Имя роли</text>
+    <text name="Actions">Действия</text>
+    <text name="CouldNotCompleteLoginOperation">Не удалось завершить операцию входа в систему. Пожалуйста, повторите попытку позже.</text>
+    <text name="CouldNotValidateExternalUser">Не удалось проверить внешнего пользователя</text>
+    <text name="EditRole">Изменить роль</text>
+    <text name="EditTenant">Редактировать арендатора</text>
+    <text name="EditUser">Редактировать пользователя</text>
+    <text name="TenantIdIsNotActive{0}">Арендодатель{0} не активен</text>
+    <text name="UnknownTenantId{0}">Неизвестный арендатор{0}</text>
+    <text name="ThisFieldIsRequired">Это поле обязательно</text>
+    <text name="PleaseWait">Пожалуйста, подождите...</text>
+    <text name="Administration">Администрирование </text>
+    <text name="ClearAll">Очистить все</text>
+    <text name="ClearOthers">Очистить другие</text>
+    <text name="LabelOptions">Варианты надписей</text>
+    <text name="Permissions">Разрешения </text>
+    <text name="RoleDescription">Описание роли</text>
+    <text name="Refresh">Обновить</text>
+    <text name="Create">Создать</text>
+    <text name="UserDetails">Сведения о пользователе</text>
+    <text name="UserRoles">Роли пользователей</text>
+    <text name="ConfirmPassword">Подтвердите пароль</text>
+    <text name="Version">Версия</text>
+    <text name="On">Включить</text>
+    <text name="Off">Выключить</text>
+    <text name="AreYouSureWantToDelete">Вы уверены, что хотите удалить {0}?</text>
+    <text name="SuccessfullyDeleted">Успешно удалено</text>
+    <text name="StartTyping">Начните вводить</text>
+    <text name="Skins">Скины</text>
+    <text name="Settings">Настройки</text>
+    <text name="Filter">Фильтр</text>
+    <text name="CurrentPassword">Текущий пароль </text>
+    <text name="NewPassword">Новый пароль</text>
+    <text name="ConfirmNewPassword">Подтвердите новый пароль</text>
+    <text name="PasswordsDoNotMatch">Пароли не совпадают</text>
+    <text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Пароли должны содержать не менее 8 символов, содержать строчные, прописные и цифры</text>
+    <text name="UserDeleteWarningMessage">Пользователь {0} будет удален.</text>
+    <text name="RoleDeleteWarningMessage">Роль {0} будет удалена и не назначена всем назначенным пользователям.</text>
+    <text name="TenantDeleteWarningMessage">Арендатор {0} будет удален.</text>
     <text name="SearchWithThreeDot">Search...</text>
-    <text name="PleaseEnterAtLeastNCharacter">Please enter at least {0} characters</text>
-    <text name="PleaseEnterNoMoreThanNCharacter">Please enter no more than {0} characters</text>
-    <text name="InvalidEmailAddress">Invalid email address</text>
-    <text name="InvalidPattern">Invalid</text>
-    <text name="PairsDoNotMatch">Do not match</text>
-    <text name="All">All</text>
-    <text name="TotalRecordsCount">Total: {0}</text>
-    <text name="Search">Search</text>
-    <text name="Clear">Clear</text>
-    <text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
-    <text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
+    <text name="PleaseEnterAtLeastNCharacter">Пожалуйста, введите не более {0} символов</text>
+    <text name="PleaseEnterNoMoreThanNCharacter">Неверный адрес электронной почты</text>
+    <text name="InvalidEmailAddress">Неверный адрес электронной почты </text>
+    <text name="InvalidPattern">Неверный</text>
+    <text name="PairsDoNotMatch">Не совпадают</text>
+    <text name="All">Все</text>
+    <text name="TotalRecordsCount">Всего: {0}</text>
+    <text name="Search">Поиск</text>
+    <text name="Clear">Очистить</text>
+    <text name="ResetPasswordStepOneInfo">1. Введите свой пароль администратора</text>
+    <text name="ResetPasswordStepTwoInfo">2. Скопируйте этот случайный пароль, чтобы вы могли отправить его пользователю </text>
   </texts>
 </localizationDictionary>
