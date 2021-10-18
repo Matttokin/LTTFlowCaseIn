@@ -21,25 +21,26 @@ namespace LttFlow.MeterReading
 
         public async Task<IEnumerable<ChartGroupDto>> GetChartData()
         {
-            var metricGroups = await Repository
+            var metrics = await Repository
                 .GetAllIncluding(x => x.Group)
-                .GroupBy(x => x.Group)
                 .AsNoTracking()
                 .ToListAsync();
+
+            var metricGroups = metrics.GroupBy(x => x.Group.Name);
 
             var result = new List<ChartGroupDto>();
 
             foreach(var g in metricGroups)
             {
-                var groupByDate = g.GroupBy(x => x.Time);
+                var groupByDate = g.GroupBy(x => x.Time.ToString("dd.MM.yyyy"));
 
                 foreach(var gd in groupByDate)
                 {
                     result.Add(new ChartGroupDto()
                     {
-                        GroupName = g.Key.Name,
-                        Value = gd.Average(x => x.Value),
-                        Date = gd.Key.ToString("dd.MM.yyyy")
+                        GroupName = g.Key,
+                        Value = Math.Round(gd.Average(x => x.Value),2),
+                        Date = gd.Key
                     });
                 }
             }

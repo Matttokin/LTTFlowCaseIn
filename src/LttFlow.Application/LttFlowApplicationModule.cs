@@ -2,6 +2,7 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using LttFlow.Authorization;
+using LttFlow.SeedTimer;
 
 namespace LttFlow
 {
@@ -25,6 +26,14 @@ namespace LttFlow
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
                 cfg => cfg.AddMaps(thisAssembly)
             );
+        }
+
+        public override void PostInitialize()
+        {
+            base.PostInitialize();
+
+            var _seedTimerAppService = IocManager.Resolve<ISeedTimerAppService>();
+            _seedTimerAppService.GenerateData();
         }
     }
 }
