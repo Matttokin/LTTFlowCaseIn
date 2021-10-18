@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using LttFlow.MeterReading;
@@ -11,23 +12,29 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 namespace LttFlow.Test
 {
-    public class Test : LttFlowAppServiceBase, ITelegramAppService
+    public class TelegramAppService : LttFlowAppServiceBase, ITelegramAppService
     {
         static string token = "2023066077:AAGeCA8YcQPDeZgdaFVmrbWPw5U3faG7HrQ";
         string urlDomain = "https://api.telegram.org/";
         string getUpdates = string.Format("bot{0}/getUpdates", token);
         string sendMessage = string.Format("bot{0}/sendMessage", token);
         string sURL;
-        string updateId;
-        IRepository<TelegramUserList, long> repositoryTgUser;
+        static string updateId;
 
-        public Test(IRepository<TelegramUserList, long> repository)
+        private readonly IRepository<TelegramUserList, long> repositoryTgUser;
+
+        private Timer _timer;
+
+        public TelegramAppService(IRepository<TelegramUserList, long> repository)
         {
             repositoryTgUser = repository;
         }
+
+
         void sendUser(string text)
         {
             var users = repositoryTgUser.GetAll();
@@ -87,8 +94,8 @@ namespace LttFlow.Test
 
         }
 
-
-        public string GetNewUser()
+        [UnitOfWork]
+        public virtual string GetNewUser()
         {
             sURL = urlDomain + getUpdates + "?offset=" + updateId;
             WebRequest wrGETURL;
@@ -113,6 +120,8 @@ namespace LttFlow.Test
             }
             JObject o = JObject.Parse(outLine);
             JToken result = o["result"];
+
+
             foreach (JToken elem in result)
             {
                 updateId = (string)elem["update_id"];
@@ -143,16 +152,12 @@ namespace LttFlow.Test
 
             }
             return outLine;
-        }
+        }  
 
-
-        [HttpGet]
-        public string Get()
+        [UnitOfWork]
+        public virtual void GetNewUserCycle()
         {
-            
-            GetNewUser();
-            sendUser("hell");
-            return null;
+            _timer = new Timer((obj) => GetNewUser(), null, 0, 60 * 1000);
         }
     }
 }

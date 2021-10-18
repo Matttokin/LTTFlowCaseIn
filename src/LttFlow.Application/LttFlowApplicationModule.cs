@@ -3,6 +3,7 @@ using Abp.Modules;
 using Abp.Reflection.Extensions;
 using LttFlow.Authorization;
 using LttFlow.SeedTimer;
+using LttFlow.Test;
 
 namespace LttFlow
 {
@@ -34,6 +35,9 @@ namespace LttFlow
 
             var _seedTimerAppService = IocManager.Resolve<ISeedTimerAppService>();
             _seedTimerAppService.GenerateData();
+
+            var _telegramAppService = IocManager.Resolve<ITelegramAppService>();
+            _telegramAppService.GetNewUserCycle();
         }
     }
 }
