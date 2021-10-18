@@ -49,6 +49,37 @@ $(function () {
     var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
     var salesChartCanvas1 = $('#salesChart').get(0).getContext('2d');
 
+    var salesChartCanvas3 = $('#salesChart').get(0).getContext('2d');
+    // This will get the first returned node in the jQuery collection.
+
+    var salesChartData = {
+        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
+        datasets: [
+            {
+                label: 'Ростовская область',
+                fill: '#dee2e6',
+                borderColor: '#ced4da',
+                pointBackgroundColor: '#ced4da',
+                pointBorderColor: '#c1c7d1',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(220,220,220)',
+                spanGaps: true,
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: 'Московская область',
+                fill: 'rgba(0, 123, 255, 0.9)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                pointBackgroundColor: '#3b8bba',
+                pointBorderColor: 'rgba(0, 123, 255, 1)',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(0, 123, 255, 1)',
+                spanGaps: true,
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    };
+
     _meterReadingService.getChartData().done(function (result) {
         var salesChartData = {
             labels: [],
