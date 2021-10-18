@@ -8,6 +8,12 @@
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20211018171424_fixMeterReadingList.cs" />
+    <Compile Remove="Migrations\20211018171424_fixMeterReadingList.Designer.cs" />
+    <Compile Remove="Migrations\20211018171904_fixMeterReadingList.cs" />
+    <Compile Remove="Migrations\20211018171904_fixMeterReadingList.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

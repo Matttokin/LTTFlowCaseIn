@@ -15,8 +15,9 @@ namespace LttFlow.MeterReading
         public string Name { get; set; }
 
         [ForeignKey("GroupId")]
-        public MeterReadingList Group;
-        public int GroupId { get; set; }
+        public virtual MeterReadingGroupList Group { get; set; }
+        public virtual long? GroupId { get; set; }
+
         public string Location { get; set; }
         public decimal Value { get; set; }
         public DateTime Time { get; set; }

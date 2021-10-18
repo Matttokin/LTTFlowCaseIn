@@ -3,15 +3,17 @@ using System;
 using LttFlow.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace LttFlow.Migrations
 {
     [DbContext(typeof(LttFlowDbContext))]
-    partial class LttFlowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211018172923_fixMeterReadingList")]
+    partial class fixMeterReadingList
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

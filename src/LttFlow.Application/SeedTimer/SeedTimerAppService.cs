@@ -48,7 +48,7 @@ namespace LttFlow.SeedTimer
             int groupId = 0;
             for (int i = 0; i < 30; i++)
             {
-                _standartSensors[i] = new StandartSensor(i.ToString(), $"Датчик №{i + 1}", groupId++, "");
+                _standartSensors[i] = new StandartSensor(i.ToString(), $"Датчик №{i + 1}", _rnd.Next(1, 3), "");
             }
         }
 
