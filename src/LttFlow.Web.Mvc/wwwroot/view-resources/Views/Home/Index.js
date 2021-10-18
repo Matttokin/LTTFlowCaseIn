@@ -20,10 +20,10 @@
     // This will get the first returned node in the jQuery collection.
 
     var salesChartData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
         datasets: [
             {
-                label: 'Electronics',
+                label: 'Ростовская область',
                 fill: '#dee2e6',
                 borderColor: '#ced4da',
                 pointBackgroundColor: '#ced4da',
@@ -34,7 +34,7 @@
                 data: [65, 59, 80, 81, 56, 55, 40]
             },
             {
-                label: 'Digital Goods',
+                label: 'Московская область',
                 fill: 'rgba(0, 123, 255, 0.9)',
                 borderColor: 'rgba(0, 123, 255, 1)',
                 pointBackgroundColor: '#3b8bba',
