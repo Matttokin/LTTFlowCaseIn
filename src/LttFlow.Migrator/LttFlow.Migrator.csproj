@@ -21,4 +21,5 @@
     <ProjectReference Include="..\LttFlow.Core\LttFlow.Core.csproj" />
     <ProjectReference Include="..\LttFlow.EntityFrameworkCore\LttFlow.EntityFrameworkCore.csproj" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>
